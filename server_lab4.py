@@ -16,12 +16,12 @@ client_names = {}
 clients_in_chat_mode = {}
 
 def is_valid_multicast_address(address):
-    # 定义多播地址的范围
+    # define the range of multicast ip address
     multicast_range_start = ipaddress.IPv4Address(MULTICAST_RANGE[0])
     multicast_range_end = ipaddress.IPv4Address(MULTICAST_RANGE[1])
-    # 将传入的地址转换为IPv4Address对象
+    # transfer the IP address to IPv4 address type
     addr = ipaddress.IPv4Address(address)
-    # 检查地址是否在多播范围内
+    # check the range of multicast ip address
     return multicast_range_start <= addr <= multicast_range_end
 
 def handle_client(client_socket, addr):
